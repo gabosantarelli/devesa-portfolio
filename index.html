@@ -1,1 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DEVESA · Portfolio Ingeniería v4</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:#0F172A;color:#E2E8F0;line-height:1.5;min-height:100vh}
+.hdr{background:#0F172A;border-bottom:1px solid #1E293B;padding:12px 20px;position:sticky;top:0;z-index:50}
+.hi{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px}
+.hi h1{font-size:17px;font-weight:800;letter-spacing:-0.02em}
+.hi .sub{font-size:10px;color:#475569;margin-top:1px}.hi .sub b{color:#F59E0B}
+.nv{display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.nb{padding:6px 14px;border-radius:6px;border:none;cursor:pointer;font-size:11px;font-weight:700;background:#1E293B;color:#64748B;transition:.15s}
+.nb.a{background:#3B82F6;color:#fff}.nb:hover:not(.a){background:#334155}
+.ck{font-size:10px;color:#64748B;display:flex;align-items:center;gap:4px;margin-right:6px;cursor:pointer}
+.ck input{accent-color:#3B82F6}
+.ct{padding:16px 20px;max-width:1200px;margin:0 auto}
+.kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px;margin-bottom:16px}
+.kp{background:#1E293B;border-radius:8px;padding:12px 14px;border:1px solid #334155}
+.kp.ac{background:#1E3A5F;border-color:#2563EB}
+.kp .v{font-size:26px;font-weight:800;line-height:1}.kp.ac .v{color:#60A5FA}
+.kp .l{font-size:10px;color:#94A3B8;margin-top:3px;font-weight:700}
+.kp .s{font-size:9px;color:#475569;margin-top:1px}
+.bd{font-size:9px;padding:2px 7px;border-radius:4px;font-weight:800;letter-spacing:.06em;color:#fff;display:inline-block;white-space:nowrap;cursor:pointer;user-select:none}
+.pc{background:#1E293B;border-radius:10px;margin-bottom:8px;overflow:hidden;transition:box-shadow .3s}
+.pc.op{box-shadow:0 0 20px rgba(99,102,241,.15)}
+.ch{padding:12px 16px;cursor:pointer;display:flex;align-items:center;gap:10px}
+.ch:hover{background:rgba(255,255,255,.02)}
+.pb{background:#0F172A;border-radius:4px;height:6px;width:100%;overflow:hidden}
+.pf{height:100%;border-radius:4px;transition:width .5s}
+.cb{padding:12px 16px;border-top:1px solid #334155}
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:700px){.cg{grid-template-columns:1fr}}
+.fl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.pnb{background:#0C4A6E33;border:1px solid #0369A1;border-radius:8px;padding:10px 14px;margin-bottom:12px}
+.ai{font-size:11px;color:#CBD5E1;padding:4px 0;border-bottom:1px solid #1E293B;display:flex;gap:6px;line-height:1.4;cursor:pointer}
+.ai.dn{color:#475569;text-decoration:line-through}
+.dr{display:grid;grid-template-columns:70px 1fr 90px 100px;gap:8px;padding:8px 10px;background:#292524;border-radius:6px;margin-bottom:4px;font-size:11px;align-items:center}
+@media(max-width:700px){.dr{grid-template-columns:1fr;gap:4px}}
+.ab{border-radius:10px;padding:14px;margin-bottom:12px}
+.as{background:#1E293B;border-radius:10px;padding:16px;margin-bottom:10px}
+.mh{background:linear-gradient(135deg,#1E3A5F,#0F172A);border-radius:10px;padding:18px;margin-bottom:16px;border:1px solid #2563EB}
+.fb{display:flex;gap:4px;margin-bottom:12px;flex-wrap:wrap}
+.fbtn{padding:5px 12px;border-radius:16px;border:none;cursor:pointer;font-size:10px;font-weight:700;background:transparent;color:#475569}
+.fbtn.a{background:#334155;color:#F1F5F9}
+.eb{font-size:10px;background:#334155;color:#94A3B8;border:none;border-radius:4px;padding:4px 10px;cursor:pointer}
+.ar{font-size:16px;color:#475569;transition:transform .2s;user-select:none}.ar.op{transform:rotate(180deg)}
+.ni{flex:1;background:#0F172A;border:1px solid #334155;border-radius:6px;padding:6px 10px;color:#E2E8F0;font-size:11px;outline:none;font-family:inherit}
+.ni:focus{border-color:#3B82F6}
+.nabtn{background:#334155;border:none;border-radius:6px;padding:6px 12px;color:#94A3B8;font-size:10px;cursor:pointer;font-weight:700}
+.sl{flex:1;max-width:200px;accent-color:#3B82F6}
+.nt{font-size:11px;color:#CBD5E1;padding:4px 8px;background:#334155;border-radius:6px;margin-bottom:4px}
+.rbtn{padding:6px 10px;border-radius:6px;border:1px solid #334155;cursor:pointer;font-size:9px;background:transparent;color:#475569}
+@media print{.hdr{position:static}.nv,.ck,.eb,.rbtn{display:none}.pc{break-inside:avoid}body{background:#fff;color:#000}}
+</style>
+</head>
+<body>
+<div class="hdr"><div class="hi"><div><h1>DEVESA · Portfolio Ingeniería</h1><div class="sub">Reunión: 12/03/2026 · Próxima: <b>19/03/2026</b> · <span style="color:#10B981">✎ Editable — cambios se guardan</span></div></div>
+<div class="nv"><label class="ck"><input type="checkbox" id="pnT" checked onchange="R()">Notas</label>
+<button class="nb a" id="b-exec" onclick="V('exec')">⚡ Ejecutiva</button>
+<button class="nb" id="b-full" onclick="V('full')">📋 Portfolio</button>
+<button class="nb" id="b-agenda" onclick="V('agenda')">🎤 Reunión</button>
+<button class="rbtn" onclick="resetAll()" title="Resetear datos">↺</button>
+</div></div></div>
+<div class="ct" id="app"></div>
+<script>
+const TD=new Date("2026-03-17"),LM="12/03/2026",NM="19/03/2026",SK="devesa-v4-gh";
+const PPL={tomas:"Tomás Z.",sergio:"Sergio DV",edmundo:"Edmundo B.",martin:"Martín O.",ariel:"Ariel R.",ricardo:"Ricardo A.",agustin:"Agustín M.",javier:"Javier F.",nikolaos:"Nikolaos K.",georgios:"Georgios T.",gabriel:"Gabriel",negro:"Negro Romero",sistemas:"Sistemas",mauricio:"Mauricio"};
+const RC={red:{b:"#DC2626",l:"ROJO"},orange:{b:"#EA580C",l:"NARANJA"},amber:{b:"#D97706",l:"AMARILLO"},green:{b:"#16A34A",l:"VERDE"},blue:{b:"#2563EB",l:"SIN UPDATE"},done:{b:"#6B7280",l:"CERRADO"}};
+const RO=["red","orange","amber","green","blue","done"];
 
+const INIT=[
+{id:"ING-10",n:"Ampliación despostada – sala principal",pm:"agustin",rag:"amber",pct:15,pri:1,risk:"Nova confirma inicio 20-23/03. Plazo 60 días (fin ~20/05). Falta anticipo. Franklin envía plan de trabajo.",ms:"Inicio obra Nova",md:"2026-03-20",pn:"Falta anticipo y 2 contrataciones menores.",ups:["Nova inicio 20-23/03. Plazo 60 días → fin ~20/05.","Pendiente: canalinas desagüe + estructura metálica (Martín).","Ignífugos OK."],acts:[{t:"Anticipo Nova",o:"martin",d:"17/03",c:1,dn:0},{t:"Plan trabajo Franklin",o:"agustin",d:"14/03",c:1,dn:0},{t:"Canalinas desagüe",o:"martin",d:"18/03",c:0,dn:0},{t:"Estructura metálica",o:"martin",d:"18/03",c:0,dn:0}],notes:[]},
+{id:"ING-01",n:"Cámaras y pasillo nuevos",pm:"gabriel",rag:"amber",pct:18,pri:2,risk:"Torfresma USD 994K + USD 65K. Retorno SÍ, automatismos NO 1ra etapa. Presentar a Tomás. China: 1/5 respuestas.",ms:"Propuesta a Tomás",md:"2026-03-19",pn:"Necesitás precio China para Tomás.",ups:["Torfresma: USD 994K + USD 65K.","Retorno SÍ, automatismos NO.","China: 1 respuesta de 5.","Financiación: Torfresma pago al final."],acts:[{t:"Cotización China",o:"agustin",d:"18/03",c:1,dn:0},{t:"Desglose Torfresma con Edmundo",o:"agustin",d:"17/03",c:0,dn:0},{t:"Propuesta a Tomás",o:"sergio",d:"19/03",c:1,dn:0}],notes:[]},
+{id:"ING-21",n:"FOSS salida VRT (control % grasa)",pm:"gabriel",rag:"orange",pct:30,pri:3,risk:"🚨 URGENTE. Instalación CSK 20-23/03. Layout definido: guillotina+aceleradora+cámara+etiquetado 2 impresoras. Max 64% bandejas. 13 cajas/min. Min 2 personas.",ms:"Servicios + instalación CSK",md:"2026-03-20",pn:"MÁS URGENTE. Layout definido 17/03. Servicios deben estar.",ups:["Instalación CSK: 20-23/03.","Layout: guillotina+aceleradora+cámara+etiquetado.","Max 64% FOSS por bandeja.","13 cajas/min, 2 personas.","Tolerancia grasa pendiente Tomás."],acts:[{t:"Servicios agua+electricidad",o:"agustin",d:"18/03",c:1,dn:0},{t:"Liberar OC 15992",o:"martin",d:"14/03",c:1,dn:0},{t:"Operatoria bandejas al Negro",o:"ariel",d:"17/03",c:1,dn:0},{t:"Flujo rechazos + etiquetado",o:"gabriel",d:"19/03",c:1,dn:0},{t:"Calibración CSK",o:"ariel",d:"20/03",c:0,dn:0},{t:"Tolerancia grasa con Tomás",o:"sergio",d:"19/03",c:0,dn:0},{t:"Pedido cintas 3m",o:"agustin",d:"18/03",c:0,dn:0}],notes:[]},
+{id:"ING-04",n:"Salida cueros + huesos (eléctrico)",pm:"agustin",rag:"green",pct:50,pri:4,risk:"Lea Construcciones. Target ejecución $80M + $3M materiales. Specs CERRADAS. Sergio aprobó.",ms:"Cerrar negociación Lea",md:"2026-03-18",pn:"Sergio dio OK. Target $80M.",ups:["Lea seleccionado.","Target $80M + $3M.","Specs CERRADAS."],acts:[{t:"Negociar Lea (target $80M)",o:"martin",d:"17/03",c:1,dn:0},{t:"OC eléctrica a Sergio",o:"martin",d:"18/03",c:0,dn:0}],notes:[]},
+{id:"ING-05",n:"Humidificación / Spray Chilling",pm:"gabriel",rag:"amber",pct:35,pri:5,risk:"CAMBIO: evaluar Spray Chilling (Nikos/Tomás). 0.2% merma. Requiere agua fría 2°C, compresor. Ósmosis ETA 23/04.",ms:"Análisis Spray vs Humidificación",md:"2026-03-28",pn:"Tomás quiere Spray. Agustín+Nikolaos análisis.",ups:["Spray Chilling solicitado.","0.2% merma Villa Mercedes.","Ósmosis ETA 23/04."],acts:[{t:"Análisis Spray vs Humidificación",o:"agustin",d:"28/03",c:1,dn:0},{t:"Precios Spray VMercedes/Reconquista",o:"ariel",d:"21/03",c:0,dn:0},{t:"Seguimiento ósmosis",o:"gabriel",d:"Continuo",c:0,dn:0}],notes:[]},
+{id:"ING-07",n:"ATCOS update",pm:"gabriel",rag:"amber",pct:60,pri:6,risk:"Problema estructural: línea para piezas chicas operando con grandes. Rechazo 5%→11%. Cintas desalineadas. Flippers+cilindros.",ms:"Reparaciones + cilindros",md:"2026-03-21",pn:"Más complejo que cilindros. Problema diseño vs uso.",ups:["Línea para trimmings, piezas grandes.","Rechazo 5%→11%.","Cintas desalineadas 2-3cm."],acts:[{t:"Comprar cilindros",o:"agustin",d:"18/03",c:1,dn:0},{t:"Realinear cintas + rascadores",o:"agustin",d:"21/03",c:0,dn:0},{t:"Validar fix Georgios",o:"javier",d:"17/03",c:0,dn:0},{t:"Prueba reducción despostador",o:"ariel",d:"25/03",c:0,dn:0}],notes:[]},
+{id:"ING-03",n:"Menudencias y faena",pm:"agustin",rag:"amber",pct:15,pri:7,risk:"Mesa vísceras NO avanzó. Kevin ~USD 100K (noria). Falta bandeja y dirección.",ms:"Cotización Kevin + bandeja",md:"2026-03-21",pn:"Kevin USD 100K es noria completa.",ups:["Mesa no avanzó.","Kevin ~USD 100K."],acts:[{t:"Cotización Kevin",o:"agustin",d:"17/03",c:0,dn:0},{t:"Definir bandeja/salida",o:"agustin",d:"21/03",c:0,dn:0}],notes:[]},
+{id:"ING-12",n:"Sala Menaker",pm:"agustin",rag:"green",pct:85,pri:8,risk:"Sala pulmón COMPLETADA. Ariel+Isaac visita equipo Menaker.",ms:"Visita Ariel+Isaac",md:"2026-03-19",pn:"Sala hecha. Falta alineación.",ups:["Sala COMPLETADA."],acts:[{t:"Visita Ariel+Isaac",o:"ariel",d:"19/03",c:0,dn:0}],notes:[]},
+{id:"ING-02",n:"Oficinas + comedor + vestuarios",pm:"agustin",rag:"amber",pct:5,pri:10,risk:"Escalado por inactividad.",ms:"Confirmar",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-06",n:"AOWID equipos frío",pm:"agustin",rag:"amber",pct:5,pri:11,risk:"Escalado por inactividad.",ms:"Confirmar",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-08",n:"Cajas + tapadora",pm:"gabriel",rag:"amber",pct:10,pri:12,risk:"Escalado por inactividad.",ms:"Confirmar",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-09",n:"Máquinas vacío",pm:"agustin",rag:"amber",pct:5,pri:13,risk:"Escalado.",ms:"Confirmar",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-11",n:"iCut + termoformadora",pm:"gabriel",rag:"amber",pct:10,pri:14,risk:"Escalado.",ms:"Confirmar",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-13",n:"Pavimentos",pm:"agustin",rag:"amber",pct:10,pri:15,risk:"Escalado.",ms:"Confirmar",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-14",n:"Caño inox China",pm:null,rag:"amber",pct:0,pri:16,risk:"Sin PM. Escalado.",ms:"Asignar",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-18",n:"Temperaturas Australia",pm:null,rag:"amber",pct:5,pri:17,risk:"Exploratorio. Escalado.",ms:"Decidir",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-19",n:"Recuperación vapor",pm:"agustin",rag:"amber",pct:0,pri:18,risk:"Escalado.",ms:"Pliego",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-20",n:"Paneles solares",pm:"ricardo",rag:"amber",pct:5,pri:19,risk:"Escalado.",ms:"Modelo",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-17",n:"Tornillo grasa",pm:"agustin",rag:"amber",pct:0,pri:20,risk:"Escalado.",ms:"Compra",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-15",n:"Cajones Robox",pm:"agustin",rag:"done",pct:100,pri:99,risk:"—",ms:"Cerrado",md:null,pn:null,ups:[],acts:[],notes:[]},
+{id:"ING-16",n:"Depósitos",pm:"georgios",rag:"done",pct:100,pri:99,risk:"—",ms:"Cerrado",md:null,pn:null,ups:[],acts:[],notes:[]},
+];
+
+const DECS=[
+{p:"ING-21",t:"Servicios listos 20/03 + OC 15992",o:"martin",u:"INMEDIATA"},
+{p:"ING-10",t:"Anticipo Nova para arranque 20-23/03",o:"martin",u:"INMEDIATA"},
+{p:"ING-04",t:"Negociar Lea materiales → $80M",o:"martin",u:"ESTA SEMANA"},
+{p:"ING-01",t:"Torfresma a Tomás para aprobación",o:"sergio",u:"PRÓX SEMANA"},
+{p:"ING-05",t:"Análisis Spray Chilling vs Humidificación",o:"agustin",u:"2 SEMANAS"},
+];
+
+let P,cv="exec",cf="all",oi=new Set(["ING-21"]),pnOn=true;
+
+function load(){try{const s=localStorage.getItem(SK);if(s){const d=JSON.parse(s);if(Array.isArray(d)&&d.length>0){P=d;return;}}}catch(e){}P=JSON.parse(JSON.stringify(INIT));}
+function save(){try{localStorage.setItem(SK,JSON.stringify(P))}catch(e){}}
+function resetAll(){P=JSON.parse(JSON.stringify(INIT));save();R();}
+
+load();
+
+function V(v){cv=v;document.querySelectorAll('.nb').forEach(b=>b.classList.remove('a'));document.getElementById('b-'+v)?.classList.add('a');R()}
+function R(){pnOn=document.getElementById('pnT').checked;document.getElementById('app').innerHTML=render()}
+function tgl(id){oi.has(id)?oi.delete(id):oi.add(id);R()}
+function expA(ids){ids.forEach(i=>oi.add(i));R()}
+function cycleRag(id,e){e.stopPropagation();const p=P.find(x=>x.id===id);if(!p)return;const i=RO.indexOf(p.rag);p.rag=RO[(i+1)%RO.length];save();R();}
+function toggleAct(pid,ai){const p=P.find(x=>x.id===pid);if(!p||!p.acts[ai])return;p.acts[ai].dn=p.acts[ai].dn?0:1;save();R();}
+function setPct(pid,v){const p=P.find(x=>x.id===pid);if(!p)return;p.pct=Math.max(0,Math.min(100,parseInt(v)||0));save();R();}
+function addNote(pid){const inp=document.getElementById('ni-'+pid);if(!inp||!inp.value.trim())return;const p=P.find(x=>x.id===pid);if(!p)return;if(!p.notes)p.notes=[];p.notes.push({t:inp.value.trim(),d:new Date().toLocaleDateString("es-AR")});inp.value='';save();R();}
+function noteKey(pid,e){if(e.key==='Enter')addNote(pid);}
+
+function dF(d){if(!d)return null;return Math.ceil((new Date(d)-TD)/864e5)}
+function fD(d){if(!d)return"—";const t=new Date(d);return String(t.getDate()).padStart(2,'0')+'/'+String(t.getMonth()+1).padStart(2,'0')}
+function bg(r,click){const c=RC[r]||RC.blue;const oc=click?` onclick="${click}"`:'';return`<span class="bd" style="background:${c.b}"${oc}>${c.l}${click?' ▾':''}</span>`}
+function pb(pct,col){return`<div class="pb"><div class="pf" style="width:${Math.min(pct,100)}%;background:${col}"></div></div>`}
+
+function card(p){
+  const rc=RC[p.rag]||RC.blue,d=dF(p.md),ov=d!==null&&d<0,ur=d!==null&&d>=0&&d<=7;
+  const isO=oi.has(p.id),esc=p.risk.includes("Escalado"),doneN=(p.acts||[]).filter(a=>a.dn).length;
+  let h=`<div class="pc${isO?' op':''}" style="border-left:4px solid ${rc.b}">`;
+  h+=`<div class="ch" onclick="tgl('${p.id}')">`;
+  h+=bg(p.rag,`cycleRag('${p.id}',event)`);
+  h+=`<div style="flex:1;min-width:0"><div style="display:flex;align-items:center;gap:6px;flex-wrap:wrap">`;
+  h+=`<span style="font-size:10px;color:#64748B;font-weight:800;font-family:monospace">${p.id}</span>`;
+  h+=`<span style="font-size:13px;font-weight:700">${p.n}</span>`;
+  if(esc)h+=`<span style="font-size:9px;background:#D9770633;color:#FDE68A;padding:1px 5px;border-radius:8px">📢 Escalado</span>`;
+  h+=`</div><div style="font-size:10px;color:#64748B;margin-top:2px">PM: ${PPL[p.pm]||'—'} · ${p.pct}%`;
+  if(doneN>0)h+=` <span style="color:#10B981">· ${doneN}/${p.acts.length} ✓</span>`;
+  h+=`</div></div>`;
+  h+=`<div style="flex:0 0 110px;text-align:right">`;
+  if(p.md){const col=ov?"#EF4444":ur?"#F59E0B":"#64748B";const txt=ov?`⚠ VENCIDO ${Math.abs(d)}d`:ur?`⏰ ${d}d`:fD(p.md);h+=`<div style="font-size:10px;font-weight:700;color:${col}">${txt}</div>`}
+  h+=`<div style="margin-top:3px">${pb(p.pct,rc.b)}</div></div>`;
+  h+=`<span class="ar${isO?' op':''}">▾</span></div>`;
+
+  if(isO){
+    h+=`<div class="cb">`;
+    // Slider
+    h+=`<div style="display:flex;gap:8px;align-items:center;margin-bottom:10px"><span style="font-size:10px;color:#64748B">Avance:</span><input type="range" class="sl" min="0" max="100" value="${p.pct}" oninput="setPct('${p.id}',this.value)" style="accent-color:${rc.b}"><span style="font-size:11px;font-weight:700;width:35px">${p.pct}%</span></div>`;
+    // Private note
+    if(pnOn&&p.pn)h+=`<div class="pnb"><div style="font-size:10px;font-weight:700;color:#38BDF8;margin-bottom:4px">💡 NOTA PRIVADA</div><div style="font-size:12px;color:#BAE6FD;line-height:1.5;font-style:italic">${p.pn}</div></div>`;
+    h+=`<div class="cg"><div>`;
+    h+=`<div class="fl" style="color:#F59E0B">Riesgo</div>`;
+    h+=`<div style="font-size:11px;color:#94A3B8;line-height:1.6">${p.risk}</div>`;
+    if(p.ms){h+=`<div class="fl" style="color:#3B82F6;margin-top:10px">Próximo Hito</div>`;h+=`<div style="font-size:11px">${p.md?'📅 '+fD(p.md)+' — ':''}${p.ms}</div>`}
+    h+=`</div><div>`;
+    if(p.acts&&p.acts.length){
+      h+=`<div class="fl" style="color:#10B981">Acciones (${doneN}/${p.acts.length})</div>`;
+      p.acts.forEach((a,i)=>{
+        const isDone=a.dn;
+        h+=`<div class="ai${isDone?' dn':''}" onclick="toggleAct('${p.id}',${i})">`;
+        h+=`<span style="color:${isDone?'#10B981':a.c?'#EF4444':'#374151'}">${isDone?'✅':a.c?'🔴':'○'}</span>`;
+        h+=`<div><div>${a.t}</div><div style="font-size:10px;color:#475569;margin-top:2px">${PPL[a.o]||a.o} · ${a.d}</div></div></div>`;
+      });
+    }
+    h+=`</div></div>`;
+    // Updates
+    if(p.ups&&p.ups.length){h+=`<div style="margin-top:12px"><div class="fl" style="color:#8B5CF6">Novedades (${LM})</div>`;p.ups.forEach(u=>{h+=`<div style="font-size:10px;color:#64748B;padding:2px 0">• ${u}</div>`});h+=`</div>`}
+    // User notes
+    if(p.notes&&p.notes.length){h+=`<div style="margin-top:12px"><div class="fl" style="color:#F59E0B">Mis Notas</div>`;p.notes.forEach(n=>{h+=`<div class="nt"><span style="color:#64748B;font-size:10px">${n.d}:</span> ${n.t}</div>`});h+=`</div>`}
+    // Add note input
+    h+=`<div style="margin-top:10px;display:flex;gap:6px"><input class="ni" id="ni-${p.id}" placeholder="Agregar nota..." onkeydown="noteKey('${p.id}',event)"><button class="nabtn" onclick="addNote('${p.id}')">+ Nota</button></div>`;
+    h+=`</div>`;
+  }
+  h+=`</div>`;return h;
+}
+
+function render(){
+  const act=P.filter(p=>p.rag!=="done"),cts={};RO.forEach(k=>cts[k]=0);P.forEach(p=>cts[p.rag]++);
+  const critN=P.flatMap(p=>p.acts||[]).filter(a=>a.c&&!a.dn).length;
+  const top=P.filter(p=>p.pri<=8&&p.rag!=="done");
+  const escN=P.filter(p=>p.risk.includes("Escalado")).length;
+  let h='';
+
+  // KPIs
+  h+=`<div class="kg">`;
+  [{v:act.length,l:"Activos",s:cts.done+" cerr.",a:1},{v:cts.orange,l:"🟠 Naranja",s:"Inmediata"},{v:cts.amber,l:"🟡 Amarillo",s:escN+" escalados"},{v:cts.green,l:"🟢 Verde",s:"En camino"},{v:critN,l:"Acción crítica",s:"Pendientes"}].forEach(k=>{
+    h+=`<div class="kp${k.a?' ac':''}"><div class="v">${k.v}</div><div class="l">${k.l}</div><div class="s">${k.s}</div></div>`});
+  h+=`</div>`;
+
+  if(cv==="exec"){
+    h+=`<div class="ab" style="background:#DC262611;border:1px solid #991B1B"><div style="font-size:13px;font-weight:800;color:#FCA5A5;margin-bottom:6px">🚨 FOSS — instalación 20-23/03</div><div style="font-size:11px;color:#FDA4AF;line-height:1.5">Layout definido. Servicios deben estar listos. Tolerancia grasa pendiente Tomás.</div></div>`;
+    h+=`<div class="ab" style="background:#1C1917;border:1px solid #78350F"><div style="font-size:13px;font-weight:800;color:#F59E0B;margin-bottom:10px">⚡ DECISIONES REQUERIDAS</div>`;
+    DECS.forEach(d=>{const uc=d.u==="INMEDIATA"?"#DC262633":d.u==="ESTA SEMANA"?"#D9770633":"#1E40AF33";const tc=d.u==="INMEDIATA"?"#FCA5A5":d.u==="ESTA SEMANA"?"#FDE68A":"#93C5FD";
+      h+=`<div class="dr"><span style="font-family:monospace;color:#F59E0B;font-weight:800;font-size:10px">${d.p}</span><span style="color:#E2E8F0">${d.t}</span><span style="font-size:10px;color:#CBD5E1">${PPL[d.o]}</span><span style="text-align:center;padding:3px 6px;border-radius:4px;font-weight:800;font-size:9px;background:${uc};color:${tc}">${d.u}</span></div>`});
+    h+=`</div>`;
+    h+=`<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px"><div style="font-size:13px;font-weight:700;color:#64748B;text-transform:uppercase">Top 8</div><button class="eb" onclick="expA(${JSON.stringify(top.map(p=>p.id))})">Expandir</button></div>`;
+    top.forEach(p=>{h+=card(p)});
+  }
+
+  else if(cv==="full"){
+    const fts=[{k:"all",l:`Todos (${P.length})`},{k:"active",l:`Activos`},{k:"orange",l:`🟠`},{k:"amber",l:`🟡`},{k:"green",l:`🟢`},{k:"done",l:`✅`}];
+    h+=`<div class="fb">`;fts.forEach(f=>{h+=`<button class="fbtn${cf===f.k?' a':''}" onclick="cf='${f.k}';R()">${f.l}</button>`});h+=`</div>`;
+    let list=cf==="all"?P:cf==="active"?act:P.filter(p=>p.rag===cf);
+    list=[...list].sort((a,b)=>a.pri-b.pri);
+    list.forEach(p=>{h+=card(p)});
+  }
+
+  else if(cv==="agenda"){
+    h+=`<div class="mh"><div style="font-size:18px;font-weight:800">🎤 Reunión — ${NM}</div><div style="font-size:12px;color:#93C5FD;margin-top:3px">Todos los gerentes · ~25 min</div></div>`;
+    [{n:"1",t:"RESUMEN",c:"#3B82F6",bd:`${act.length} activos. ${cts.orange} naranja. ${cts.amber} amarillo (${escN} escalados). ${cts.green} verde. ${critN} acciones críticas. FOSS 20/03, Nova 20-23/03.`},
+     {n:"2",t:"DECISIONES",c:"#EF4444",bd:DECS.map(d=>`${d.p}: ${d.t} (${d.u})`).join("<br>")},
+     {n:"3",t:"REPASO TOP 8",c:"#F59E0B",bd:null},
+     {n:"4",t:"CIERRE",c:"#10B981",bd:`Compromisos. ¿Servicios FOSS? ¿Anticipo Nova? ${escN} escalados: ¿activos, pausa, cancelados?`}
+    ].forEach(s=>{
+      h+=`<div class="as" style="border-left:4px solid ${s.c}"><div style="font-size:13px;font-weight:800;color:${s.c};margin-bottom:8px">${s.n}. ${s.t}</div>`;
+      if(s.bd)h+=`<div style="font-size:12px;color:#CBD5E1;line-height:1.8">${s.bd}</div>`;
+      if(s.n==="3")top.forEach(p=>{
+        h+=`<div style="padding:8px 0;border-bottom:1px solid #334155">${bg(p.rag)} <span style="font-size:12px;font-weight:700;margin-left:4px">${p.id} — ${p.n}</span><div style="font-size:11px;color:#94A3B8;margin-top:4px">${p.risk}</div>`;
+        if(pnOn&&p.pn)h+=`<div style="background:#0C4A6E22;border-left:3px solid #0369A1;padding:6px 10px;margin-top:4px;font-size:10px;color:#7DD3FC;font-style:italic">💡 ${p.pn}</div>`;
+        h+=`</div>`;
+      });
+      h+=`</div>`;
+    });
+  }
+
+  h+=`<div style="margin-top:20px;text-align:center;font-size:9px;color:#334155">DEVESA v4 · ✎ Editable · Datos: ${LM}</div>`;
+  return h;
+}
+R();
+</script>
+</body>
+</html>
