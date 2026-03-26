@@ -1,0 +1,48 @@
+name: Deploy Dashboard to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+    paths: ['index.html']
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate HTML
+        run: |
+          echo "Checking index.html exists and is not empty..."
+          test -s index.html || (echo "ERROR: index.html is empty or missing" && exit 1)
+          echo "Checking for DEVESA marker..."
+          grep -q "DEVESA" index.html || (echo "ERROR: Not a valid DEVESA dashboard" && exit 1)
+          echo "Checking file size is reasonable (>10KB)..."
+          size=$(wc -c < index.html)
+          [ "$size" -gt 10000 ] || (echo "ERROR: File too small ($size bytes), likely corrupt" && exit 1)
+          echo "✅ Validation passed ($size bytes)"
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
